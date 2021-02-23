@@ -1,0 +1,252 @@
+  header{
+    display: flex;
+    align-items: center;
+    font-family: 'poppins',sans-serif;
+
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    font-weight: bold;
+    font-family: 'lato', sans-serif;
+}
+
+header nav li {
+    display: inline-block;
+    margin: 0px 220px; 
+    font-family: 'poppins',sans-serif;
+
+}
+
+.hero {
+    
+    background-position: center;
+    height: 500px;
+    position: relative;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.hero .hero-content {
+    position: absolute;
+    left: 20%;
+    bottom: 30%;
+ 
+}
+.icon  {
+    display: inline-block;
+    margin: 0px 20px;
+}
+.button {
+  display: inline-block;
+  padding: 15px 0px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+  outline: none;
+  color:rgb(119, 16, 119) ;
+  background-color:white;
+  border: none;
+  border-radius: 15px;
+}
+
+h2 {
+text-align: center;
+margin-top: 0px;
+font-family:'poppins',sans-serif;
+color:#919191;
+text-transform: uppercase;
+
+}
+.input{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.label {
+    width: 2100px;
+}
+.label2 {
+    width: 2230px;
+}
+.label3 {
+    width: 2245px;
+}
+.label4 {
+    width: 2285px;
+}
+.button1   {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color:white ;
+    background-color:black;
+    border: none;
+
+ }
+
+.footer {
+    width: 100%;
+    widows:0;
+    height:80px;
+    background: white;
+    color: purple;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+}
+.about{
+    float: left;
+}
+
+
+.propos {
+
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+}
+.product {
+    width: 225px;
+    font-family: 'poppins', sans-serif;
+    font-weight: bold;
+}
+.produit{
+    position: relative;
+    top: 100px;
+
+}
+
+.produit h1{
+    position: absolute;
+    color: #919191;
+    left: 650px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    bottom: 800px;
+
+
+}
+
+.produit-content h2{
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+    text-align: left;
+
+}
+
+.produit-content {
+    display:inline-block;
+    font-size: 10px;
+    margin-top:0;
+    font-weight: bold;
+    align-items: center;
+    position: relative;
+
+}
+
+.produit-content img{
+    width: 207px;
+    height: 247px;
+}
+
+
+.produit-content:hover img{
+    opacity:0.6;
+}
+
+.produit-content .square .overlay {
+    display: none;
+    overflow: hidden;
+}
+
+.produit-content .square:hover .overlay{
+    display: inline-block;
+    position: absolute;
+    transition: 3s;
+    bottom: 200px;
+    left: 40px;
+
+}
+
+.produit-content .square:hover .overlay button{
+    background: black;
+    color: white;
+    width: 140px;
+    height: 40px;
+    border: 1px solid black;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.produit-content .square .overlay button:hover{
+    color:  #919191;
+}
+
+.rec1 {
+    widows:0;
+    width: 11020px;
+    height:80px;
+    background: white;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    border-bottom: 1px solid purple;
+}
+.filters{
+    background-color:white;
+    width: 13%;
+    
+    border: 1px solid purple;
+
+}
+.content{
+    display: flex;  
+    flex-wrap: wrap;
+}
+.product-content{
+    background-color: tomato;
+}
+.product{
+    width: 85%;
+    background-color: white;
+    
+
+}
+
+.filter{
+    padding-top: 10px ;
+    font-size: 2em;
+    color: purple;
+    line-height:40%;
+   
+    background-color: white;
+    width: 8em;
+    height: 1em;
+    text-align: center;
+    justify-content: center ;
+
+}
+.search{
+    padding-left: 50px;
+    height: 25px;
+    justify-content: center;
+}
