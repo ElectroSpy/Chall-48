@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% block title %} {{solo_passionfroid.nom}} {% endblock title %}
+
+{% extends "layout/root.html" %}
+
+{% block content %}
+
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+               Mettre à jour l'image
+        </button>
+        <div class="button_container" style="display: flex; justify-content: center;">
+            <form action="{{ url_for('delete_produit', id=solo_passionfroid._id) }}" method="post" role="form">
+                    <button class="btn btn-danger" type="submit" id="delete-btn">Supprimer le produit</button>
+            </form>
+        </div>S
+        <div class="button_container" style="display: flex; justify-content: center;">
+            <form action="{{ url_for('add_image_produit', id=solo_passionfroid._id) }}" method="post" role="form">
+                    <label class="form-text">Nom du image :</label>
+                    <input class="form-control" name="image[]" type="text" placeholder="" aria-label="image[]" aria-describedby="add-btn"/>
+                    <button class="btn btn-primary" type="submit" id="delete-btn" style="margin-bottom: 50px">Ajout d'un image </button>
+            </form>
+        </div>
+        <div class="img">
+            <img class="image" src="{{ solo_passionfroid.image }}" width="100%" height="100%">
+        </div>
+        <div class="name marg">
+            <p class="detail big">{{ solo_passionfroid.nom }}</p>
+        </div>
+        <div class="container_trait">
+            <span class="trait"></span>
+        </div>
+        <div class= "style marg">
+            <p class="type"> 
+                {{ solo_passionfroid.type }}
+            </p>
+            <p class="tag">
+                {{ solo_passionfroid.tag }}
+            </p>
+        </div>
+        <div class="container_trait">
+            <span class="trait"></span>
+        <div class="image marg">
+            <h1 class="title">image</h1>
+            <div class="container_trait">
+                <span class="trait_small"></span>
+            </div>
+            <div class="image_detail">
+                {% for image in solo_produit.image %}
+                    <p class="title lit">{{ image }}</p>
+                    <div class="container_trait">
+                        <span class="trait_small"></span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Mettre à jour l'image</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form action="{{ url_for('update_produit', id=solo_passionfroid._id) }}" method="POST" role="form" style="padding-top: 100px">
+              <div class="form-group">
+                  <label class="form-text">Nom du produit :</label>
+                  <input class="form-control" name="nom" type="text" value="{{ solo_passionfroid.nom }}" aria-label="nom" aria-describedby="add-btn"/>
+              </div>
+              <div class="form-group">
+                  <label class="form-text">type de l'image :</label>
+                  <input class="form-control" name="type" type="text" value="{{ solo_passionfroid.type }}" aria-label="classe" aria-describedby="add-btn"/>  </div>
+              <div class="form-group">
+                  <label class="form-text">tag de l'image :</label>
+                  <input class="form-control" name="tag" type="text" value="{{ solo_passionfroid.tag }}" aria-label="classe" aria-describedby="add-btn"/>
+              </div>
+              <div class="form-group">
+                  {% for imageproduit in solo_passionfroid.image %}
+                    <label class="form-text">Nom du image :</label>
+                    <input class="form-control" name="image[]" type="text" value="{{ imageproduit }}" aria-label="image[]" aria-describedby="add-btn"/>
+                  {% endfor %}
+              </div>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock content %}
+</html>

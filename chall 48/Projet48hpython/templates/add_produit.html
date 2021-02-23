@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block title %} Accueil {% endblock title %}
+
+{% extends "layout/root.html" %}
+
+{% block content %}
+<body>
+ <form action="{{ url_for('add_produit') }}" method="POST" role="form" style="padding-top: 100px">
+  <div class="form-group">
+      <label class="form-text">Nom du produit :</label>
+      <input class="form-control" name="nom" type="text" placeholder="" aria-label="nom" aria-describedby="add-btn"/>
+  </div>
+  <div class="form-group">
+      <label class="form-text">type d'image :</label>
+      <input class="form-control" name="type" type="text" placeholder="" aria-label="classe" aria-describedby="add-btn"/>  </div>
+  <div class="form-group">
+      <label class="form-text"> tag de l'image:</label>
+      <input class="form-control" name="poste" type="text" placeholder="" aria-label="classe" aria-describedby="add-btn"/>
+  </div>
+
+  <div class="form-group">
+      <label class="form-text">image :</label>
+      <input class="form-control" name="image[]" type="text" placeholder="" aria-label="image[]" aria-describedby="add-btn"/>
+  </div>
+     <button class="btn btn-primary" type="submit" id="add-btn">Ajouter le produit</button>
+ </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock content %}
+</html>

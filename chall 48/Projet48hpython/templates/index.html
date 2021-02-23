@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+{% block title %} Accueil {% endblock title %}
+
+{% extends "layout/root.html" %}
+
+{% block content %}
+<div>
+    <div class="container"
+        <section class="hero-section">
+            <form action="{{ url_for('index')}}" method="post" role="form">
+                <h3 class="title">Styles</h3>
+                {% for classe in classe %}
+                    <input type="checkbox" id="id_{{classe}}" name="classe" value="{{classe}}">
+                    <label for="id_{{classe}}" style="color: white">{{classe}}</label>
+                {% endfor %}
+                <br><h3 class="title">Postes</h3>
+                {% for poste in poste %}
+                    <input type="checkbox" id="id_{{poste}}" name="poste" value="{{poste}}">
+                    <label for="id_{{poste}}" style="color: white">{{poste}}</label>
+                {% endfor %}
+                <div class="button_container">
+                    <button class="btn btn-primary" type="submit" id="validate-btn" style="margin-bottom: 50px">Valider</button>
+                </div>
+            </form>
+        <div class="count" style="margin-top: 50px; display: flex; justify-content: center">
+            <p class="title">
+                {% if countChampion == 0 %}
+                    Aucun champion trouvé
+                {% elif countChampion == 1 %}
+                    {{ countChampion }} Champion trouvé
+                {% else %}
+                    {{ countChampion}} Champions trouvés
+                {% endif %}
+            </p>
+        </div>
+        <div style="margin-bottom: 10px">
+            <a class="test " href="/desc"><button {%- if request.path == "/" %} class="btn btn-primary active" {% elif request.path == "/desc/" %} class="btn btn-primary active" {% endif %} class ="btn btn invisible disabled">Z-A</button></a>
+            <a class="test" href="/"><button {%- if request.path == "/" %} class="btn btn-primary active" {% elif request.path == "/desc/" %} class="btn btn-primary active" {% endif %} class ="btn btn invisible disabled">A-Z</button></a>
+            <a class="test " href="/style/Combattant/desc"><button {%- if request.path == "/style/Combattant" %} class="btn btn-primary active" {% elif request.path == "/style/Combattant/desc" %} class="btn btn-primary active" {% endif %} class ="btn btn invisible disabled">Z-A</button></a>
+            <a class="test" href="/style/Combattant"><button {%- if request.path == "/style/Combattant" %} class="btn btn-primary active" {% elif request.path == "/style/Combattant/desc" %} class="btn btn-primary active" {% endif %} class ="btn btn invisible disabled">A-Z</button></a>
+        </div>
+
+            <div class="card-grid">
+
+                {% for champion in leagueofstats %}
+
+                    <a class="card" href="{{ url_for('detail', id=champion._id) }}" style="transition: ease 1s">
+                    <div class="card__background" style="background-image: url({{champion.image_card}})"></div>
+                    <div class="card__content">
+                        <p class="card__category">{{champion.poste}}</p>
+                        <p class="card__category">{{champion.classe}}</p>
+                        <h3 class="card__heading">{{champion.nom}}</h3>
+                    </div>
+                    </a>
+
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock content %}
+</html>

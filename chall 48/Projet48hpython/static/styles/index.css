@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(5, 15, 19)!important;
+    margin: 0;
+}
+.navbar {
+    background-color: #111111!important;
+}
+.nav-link{
+    color: white!important;
+}
+header {
+    margin-top: 15px!important;
+}
+.btn-outline-success {
+    color: rgb(22, 68, 87)!important;
+    border-color: rgb(22, 68, 87)!important;
+}
+.btn-outline-success:hover {
+    background-color: rgb(22, 68, 87)!important;
+    color: white!important;
+}
+
+  :root{
+    --background-dark: #2d3548;
+    --text-light: rgba(255,255,255,0.6);
+    --text-lighter: rgba(255,255,255,0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
+  }
+  
+  *{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
+  
+  body{
+    height: 100%;
+  }
+  
